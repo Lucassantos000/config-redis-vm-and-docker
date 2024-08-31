@@ -1,0 +1,17 @@
+{
+    "name": "root/src",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Lucas dos Santos Marques"
+        }
+    ],
+    "require": {
+        "predis/predis": "^2.2",
+        "vlucas/phpdotenv": "^5.6"
+    }
+}

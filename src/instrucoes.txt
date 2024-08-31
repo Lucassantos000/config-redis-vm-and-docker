@@ -1,0 +1,22 @@
+--- caso o arquivo composer.json já esteja na pasta
+
+1º Instalar as dependencias do projeto
+-> composer install
+
+--- caso o arquivo composer.json **não** esteja na pasta será preciso cria-lo
+
+1º Criar o arquivo composer.json 
+-> composer init
+
+2º  Baixar as depedencias para usar o redis
+-> composer require predis/predis 
+
+3º Baixar a lib para ler variáveis de ambiente
+-> composer require vlucas/phpdotenv
+
+
+########################################
+# Lucas dos Santos Marques               #
+# 31/08/2024                             # 
+# (92) 9 86017244                        #
+########################################
