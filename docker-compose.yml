@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  web:
+    build: 
+      context: ./docker/php
+      dockerfile: Dockerfile
+    container_name: php
+    depends_on:
+      - redis
+    volumes:
+      - ./src:/var/www/src/
+      - ./public:/var/www/html/
+      - .env:/var/www/.env
+    networks:
+      - redis
+    ports:
+      - '8181:80'
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  redis:
+    build:
+      context: ./docker/redis    
+      dockerfile: Dockerfile
+    container_name: redis
+    ports:
+      - '6379:6379'
+    networks:
+      - redis
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  redis:
+    driver: bridge  
