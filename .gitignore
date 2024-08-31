@@ -1,0 +1,2 @@
+/src/vendor/   # Ignora o diretório 'vendor' dentro do diretório 'src'
+composer.lock  # Ignora o arquivo 'composer.lock'
