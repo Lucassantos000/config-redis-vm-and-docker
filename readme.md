@@ -125,3 +125,34 @@ Lembre-se de ter um arquivo `redis.conf` no mesmo diretório do Dockerfile, cont
 
 
 </details>
+
+
+### Para iniciar a aplicação usando docker (recomendado)
+
+1. Suba os containers 
+```bash
+docker compose up -d --build 
+```
+2. Verifique se os containers estão em execução
+```bash
+docker ps --format 'table {{.ID}}\t{{.Names}}\t{{.Status}}'
+```
+a saída do comando deve aparecer os containers **php** e **redis** com o status **up**
+
+3. Renomei o arquivo .env-example para .env
+```bash
+sudo mv .env-example .env
+```
+
+4. Copie o arquivo .env para dentro do container php no diretório /var/www/
+```bash
+docker cp .env php:/var/www/
+```
+
+5. Acesse a aplicação em sua máquina pelo [link](http://localhost:8181/)
+
+
+
+
+
+
